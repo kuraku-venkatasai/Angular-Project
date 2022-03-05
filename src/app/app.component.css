@@ -1,4 +1,34 @@
 table {
     width: 100%;
   }
+  .mat-header-cell {
+    color: white;
+    text-align:center;
+    background-color: #2E2E2E;
+  }
+  /* .mat-cell:hover {
+    color:blue;
+  } */
+
+  .mat-cell {
+    text-align: center;
+  }
+
+  tr:hover {
+    background-color: #96D4D4;
+  }
+
+  /* Zebra striped table */
+
+  /* tr:nth-child(even) {
+    background-color: #f2f2f2;
+  } */
+
+  /* table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+  }
+  th, td {
+    background-color: #96D4D4;
+  } */
   
