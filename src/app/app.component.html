@@ -1,35 +1,49 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" bordered="true">
+<div  class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" matSort>
 
   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
 
   <!-- Position Column -->
   <ng-container matColumnDef="ID">
-    <th mat-header-cell *matHeaderCellDef> E.ID </th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> E.ID </th>
     <td mat-cell *matCellDef="let element"> {{element.ID}} </td>
   </ng-container>
 
   <!-- Name Column -->
   <ng-container matColumnDef="Name">
-    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
     <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
   </ng-container>
 
   <!-- Weight Column -->
   <ng-container matColumnDef="Team">
-    <th mat-header-cell *matHeaderCellDef> Company </th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Company </th>
     <td mat-cell *matCellDef="let element"> {{element.Team}} </td>
   </ng-container>
 
   <!-- Symbol Column -->
   <ng-container matColumnDef="Domain">
-    <th mat-header-cell *matHeaderCellDef> Domain </th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Domain </th>
     <td mat-cell *matCellDef="let element"> {{element.Domain}} </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+<mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[1, 5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
 
 
 <button class="btn btn-danger">sai</button>
+
+<div *ngFor="let data of items; index as i; first as isFirst">
+  <!-- <h3>{{data.name}}</h3> -->
+  {{ data["name"]}} - {{ data["price"]  }}
+ <span>{{i}}/{{items.length}}. {{data.name}}</span>
+ <span *ngIf="isFirst">default</span> 
+</div>
+
+
+<h1> oldest item  {{timeNow}}</h1>
+<h1>  {{since}}</h1>
