@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
 
   timeNow = '2016-01-16T16:00:00';
   since: any;
-
+public static: any;
   public sai: { name: string; price: string; };
   constructor(private tableDataservice: TableDataService) { }
 
