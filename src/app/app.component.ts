@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { TableDataService } from './table-data.service';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatLegacyTableDataSource as MatTableDataSource } from '@angular/material/legacy-table';
+import { MatLegacyPaginator as MatPaginator } from '@angular/material/legacy-paginator';
 import * as moment from 'moment';
 import { User } from './user';
 import { MatSort, Sort } from '@angular/material/sort';
